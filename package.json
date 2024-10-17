@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",
+    "axios": "^1.7.7",
     "next": "14.2.15",
     "react": "^18",
     "react-dom": "^18",
