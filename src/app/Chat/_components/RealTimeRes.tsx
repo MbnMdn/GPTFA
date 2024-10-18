@@ -11,7 +11,7 @@ import Welcome from "@/app/Chat/_components/Welcome";
 import Message from "@/app/Chat/_components/Message";
 import Header from "@/app/Chat/_components/Header";
 
-const enc = getEncoding("o200k_base");
+const enc = getEncoding("cl100k_base");
 
 const models = [
     {name: 'ChatGPT', icon: gpt},
@@ -70,7 +70,7 @@ export default function RealTimeResponse() {
         let finalResponse;
 
         const response = await fetch(endPoints.generate_answer, {
-        // const response = await fetch('/api/chat', {
+        // const response = await fetch('/api/proxy', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -222,7 +222,8 @@ export default function RealTimeResponse() {
     };
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-        if (e.key === 'Enter' && !e.shiftKey) {
+        const isDesktop = window.innerWidth > 1000;
+        if (isDesktop && e.key === 'Enter' && !e.shiftKey) {
             handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
         }
     };
