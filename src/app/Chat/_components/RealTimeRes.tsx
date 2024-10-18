@@ -66,7 +66,7 @@ export default function RealTimeResponse() {
 
     const fetchData = async (userInput: string) => {
         let apiKey = process.env.AUTH_TOKEN;
-
+        
         let finalResponse;
 
         const response = await fetch(endPoints.generate_answer, {
@@ -283,7 +283,7 @@ export default function RealTimeResponse() {
                                 value={input}
                                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange(e)}
                                 onKeyPress={handleKeyPress}
-                                placeholder="چی تو فکرته؟"
+                                placeholder={`چی تو فکرته؟  (${totalTokens} توکن مصرف شده)`}
                                 className="bg-gray-800 border rounded-lg focus:border-cyan-700 border-gray-600"
                                 rows={1}
                                 style={{
