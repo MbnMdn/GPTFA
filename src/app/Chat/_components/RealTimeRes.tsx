@@ -81,7 +81,7 @@ export default function RealTimeResponse() {
                     {role: 'system', content: 'You are a helpful and powerful assistant. Give user only the content.'},
                     {
                         role: 'user',
-                        content: `this is our chat history in reverse order ('q' is me, 'a' is you):\\n${chatHistory()}\\nbased on our conversation, answer this: ${userInput}`
+                        content: `this is our chat history in reverse order ('q' is me, 'a' is you):\\n${chatHistory()}\\nbased on our conversation, answer this question: ${userInput} \\nif there is no history just answer it without that. and if my question was Farsi, answer in Farsi `
                     }
                 ],
                 question: userInput,
