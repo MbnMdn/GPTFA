@@ -57,7 +57,7 @@ const Message: React.FC<MessageProps> = ({msg, setInput}) => {
                     </button>
                     <div className="flex justify-end items-center gap-2">
                         <strong className="flex flex-col items-end">مبینا</strong>
-                        <img className="w-10 rounded-full h-10 items-end" src={profile.src}/>
+                        <img className="w-10 rounded-full h-10 items-end" alt={'user profile'} src={profile.src}/>
                     </div>
                 </div>
                 <p dir={msg.userDirection === 'rtl' ? 'rtl' : 'ltr'}

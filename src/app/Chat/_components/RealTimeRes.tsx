@@ -70,6 +70,7 @@ export default function RealTimeResponse() {
         let finalResponse;
 
         const response = await fetch(endPoints.generate_answer, {
+        // const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -252,7 +253,7 @@ export default function RealTimeResponse() {
 
     return (
         <div
-            className="flex px-10 md:px-20 px-20 flex-col h-screen justify-between text-neutral-100 bg-gray-900 p-6">
+            className="flex px-3 md:px-20 flex-col h-screen justify-between text-neutral-100 bg-gray-900 p-6">
             <Header selectedModel={selectedModel} setSelectedModel={setSelectedModel} />
 
             <div className="flex-grow overflow-y-auto mb-4 no-scrollbar">
