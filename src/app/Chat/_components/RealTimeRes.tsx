@@ -66,7 +66,7 @@ export default function RealTimeResponse() {
 
     const fetchData = async (userInput: string) => {
         let apiKey = process.env.AUTH_TOKEN;
-        
+
         let finalResponse;
 
         const response = await fetch(endPoints.generate_answer, {
@@ -78,10 +78,10 @@ export default function RealTimeResponse() {
             },
             body: JSON.stringify({
                 messages: [
-                    {role: 'system', content: 'You are a helpful and powerful assistant. Give user only the content.'},
+                    // {role: 'system', content: 'You are a helpful and powerful assistant. Give user only the content.'},
                     {
                         role: 'user',
-                        content: `this is our chat history in reverse order ('q' is me, 'a' is you):\\n${chatHistory()}\\nbased on our conversation, answer this question: ${userInput} \\nif there is no history just answer it without that. and if my question was Farsi, answer in Farsi `
+                        content: `this is our chat history in reverse order ('q' is me, 'a' is you):\\n${chatHistory()}\\n.based on our conversation, answer this question: ${userInput} \\n if there is no history just answer  my new question and dont talk about history. `
                     }
                 ],
                 question: userInput,
